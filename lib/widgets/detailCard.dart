@@ -3,7 +3,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../models/blogModel.dart';
-import 'likeAnimation.dart';
 
 class DetailCard extends StatefulWidget {
   BlogModel blogModel;

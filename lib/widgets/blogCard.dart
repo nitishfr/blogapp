@@ -8,7 +8,6 @@ import '../DATABASE/dbManager.dart';
 import '../Screens/detailScreen.dart';
 import '../models/blogModel.dart';
 import '../utils/utils.dart';
-import 'likeAnimation.dart';
 
 class PostCard extends StatefulWidget {
   BlogModel blogModel;
@@ -80,28 +79,11 @@ class _PostCardState extends State<PostCard> {
                                 image: NetworkImage(widget.blogModel.imageUrl), fit: BoxFit.fill)),
                         width: double.infinity,
                       ),
-                      AnimatedOpacity(
-                        duration: const Duration(milliseconds: 200),
-                        opacity: isLikeAnimating ? 1 : 0,
-                        child: LikeAnimation(
-                            child: Icon(
-                              Icons.favorite,
-                              color: Colors.white,
-                              size: height * 0.02,
-                            ),
-                            isAnimating: isLikeAnimating,
-                            duration: Duration(milliseconds: 400),
-                            onEnd: () {
-                              setState(() {
-                                isLikeAnimating = false;
-                              });
-                            }),
-                      ),
                     ]),
                   ),
                 ),
               ),
-              //Like Comment...................................................................
+              //Like ...................................................................
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Row(
